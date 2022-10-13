@@ -148,12 +148,10 @@ SELECT DISTINCT ON (e.emp_no)
 	t.title,
 	t.from_date,
 	t.to_date
-INTO retirement_titles
+--INTO retirement_titles
 FROM employees as e
 INNER JOIN titles as t
 ON (e.emp_no = t.emp_no)
-INNER JOIN dept_emp as de
-ON (e.emp_no = de.emp_no)
 WHERE (e.birth_date BETWEEN '1952-01-01' AND '1955-12-31')
 ORDER BY e.emp_no;
 
@@ -167,13 +165,41 @@ SELECT DISTINCT ON (e.emp_no)
 	t.title,
 	t.from_date,
 	t.to_date
-INTO unique_titles
+--INTO unique_titles
 FROM employees as e
 INNER JOIN titles as t
 ON (e.emp_no = t.emp_no)
-INNER JOIN dept_emp as de
-ON (e.emp_no = de.emp_no)
 WHERE (e.birth_date BETWEEN '1952-01-01' AND '1955-12-31')
-ORDER BY e.emp_no;
+	AND (t.to_date = '9999-01-01')
+ORDER BY e.emp_no ASC, t.to_date DESC;
 
 SELECT * from unique_titles;
+
+-- Deliverable 1.3
+SELECT COUNT(emp_no),
+	title
+INTO retiring_titles
+FROM unique_titles
+GROUP BY title
+ORDER BY COUNT(emp_no) DESC;
+
+-- Deliverable 2
+SELECT DISTINCT ON (e.emp_no)
+	e.emp_no,
+    e.first_name,
+	e.last_name,
+	e.birth_date,
+	de.from_date,
+	de.to_date,
+	t.title
+--INTO mentorship_eligibilty
+FROM employees as e
+INNER JOIN dept_emp as de
+ON (e.emp_no = de.emp_no)
+INNER JOIN titles as t
+ON (e.emp_no = t.emp_no)
+WHERE (e.birth_date BETWEEN '1952-01-01' AND '1955-12-31')
+	AND (t.to_date = '9999-01-01')
+ORDER BY e.emp_no ASC, t.to_date DESC;
+
+SELECT * FROM mentorship_eligibility;
