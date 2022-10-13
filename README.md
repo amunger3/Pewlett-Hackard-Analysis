@@ -19,3 +19,7 @@ The following table shows the eligible (born in 1965) mentors by title.
 
 ## Summary
 Overall, 52,153 employees are of "retirement age" and may contribute to the "silver tsunami" at Pewlett Hackard in the next couple of hiring cycles. Given that this is a 4 year "retirement window" that the queries aimed for, we should *prepare* for a quarter of these employees to retire each year, meaning 10-15,000. Thus, we turn our attention to the mentorship program to evaluate, on a numbers level, if we have what we need. For Senior Staff, we could have just over 6,000 retirements (25,000 / 4) in one year, and, with all 529 eligible mentors working, we have a 12:1 mentor to trainee ratio, which seems feasible. Similar calculations yield the same ratios on the Engineer, Staff, and Senior Engineer roles. Technique Leader and Assistant Engineer have even better ratios. The one bugbear here is Managers, where 2 are retirement eligible yet no other managers are in the mentorship eligible age band. This necessitates either an outside hire or an agreement with the retiring managers to stay on in limited roles and train their replacements.
+
+Some additional queries that could be run include:
+- The query I ran on my own, the "mentors by title" query that was used in the analysis
+- Joins onto department-level data from the mentor table, in order to see how many mentors would need to go cross-department for their mentorship duties
