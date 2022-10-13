@@ -10,7 +10,7 @@ All data is in the `Data` folder. The database schema can be found in the `schem
 The following table shows the retirees by job title.
 ![Count by Title](Images/count_by_title.png)
 - 2 Managers are eligible to retire and a plan must be developed to either train within or setup an outside hiring process
-- A vast number of Senior Staff are eligible from retirement. The current breadth of regular staff under reitement age should be able to cover the vacancies, but a training regiment must be implemented, preferably involving the expertise of the retiring Senior Staff.
+- A vast number of Senior Staff are eligible for retirement. The current breadth of regular staff under reitement age should be able to cover the vacancies, but a training regiment must be implemented, preferably involving the expertise of the retiring Senior Staff.
 
 ## Summary
 
